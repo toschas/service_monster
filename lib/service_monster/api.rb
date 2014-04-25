@@ -1,4 +1,5 @@
 require File.expand_path('../request', __FILE__)
+require File.expand_path('../response', __FILE__)
 require File.expand_path('../connection', __FILE__)
 
 module ServiceMonster
@@ -14,6 +15,7 @@ module ServiceMonster
     end
 
     include Request
+    include Response
     include Connection
   end
 end

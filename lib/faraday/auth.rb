@@ -3,7 +3,8 @@ module FaradayMiddleware
       def call(env)
 
         env[:request_headers] = env[:request_headers].merge('Authorization' => "Basic #{@access_token}")  
-        # p env
+        p env.url.query
+        # p env.url.query = Faraday::Utils.parse_query(env.url.query) if env.url.query.present?
         # if env.method == :get
         # end
         
