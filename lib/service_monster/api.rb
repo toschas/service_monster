@@ -1,3 +1,6 @@
+require File.expand_path('../request', __FILE__)
+require File.expand_path('../connection', __FILE__)
+
 module ServiceMonster
   class API
     
@@ -10,5 +13,7 @@ module ServiceMonster
       end
     end
 
+    include Request
+    include Connection
   end
 end
