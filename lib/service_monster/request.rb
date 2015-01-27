@@ -6,7 +6,6 @@ module ServiceMonster
       request(:get, path, options)
     end
 
-
     private
 
     # Perform an HTTP request

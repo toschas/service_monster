@@ -14,6 +14,14 @@ module ServiceMonster
       end
     end
 
+    def config
+      conf = {}
+      Configuration::VALID_OPTIONS_KEYS.each do |key|
+        conf[key] = send key
+      end
+      conf
+    end
+
     include Request
     include Response
     include Connection

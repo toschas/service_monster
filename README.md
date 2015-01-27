@@ -1,6 +1,6 @@
 # ServiceMonster
 
-TODO: Write a gem description
+A Ruby wrapper for the Service Monster REST API.
 
 ## Installation
 
