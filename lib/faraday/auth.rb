@@ -1,24 +1,14 @@
 module FaradayMiddleware
   class ServiceMonsterAuth < Faraday::Middleware
 
-    def initialize(app, username, password)
+    def initialize(app, api_key)
       @app          = app
-      @username     = username
-      @password     = password
-      @access_token = generate_access_token
+      @api_key      = api_key
     end
 
     def call(env)
-      env[:request_headers] = env[:request_headers].merge('Authorization' => "Basic #{@access_token}")  
-
+      env[:request_headers] = env[:request_headers].merge('Authorization' => "Basic #{@api_key}")  
       @app.call env
-    end
-
-    # Generate the access_token
-    # The access_token is always the Base64 encoded version of "username:password" (gets access token for the default_company)
-    def generate_access_token
-      token_string = "#{@username}:#{@password}"
-      return Base64.strict_encode64(token_string)  
     end
 
   end

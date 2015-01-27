@@ -11,7 +11,7 @@ module ServiceMonster
       }
       
       Faraday::Connection.new(options) do |connection|
-        connection.use FaradayMiddleware::ServiceMonsterAuth, username, password
+        connection.use FaradayMiddleware::ServiceMonsterAuth, api_key
         connection.use FaradayMiddleware::Mashify
         connection.use Faraday::Response::ParseJson
         connection.adapter(adapter)

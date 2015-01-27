@@ -11,29 +11,16 @@ RSpec.describe ServiceMonster do
     end
   end
 
-  describe '#username' do
-    it 'should return the default username' do
-      expect(ServiceMonster.username).to eq(ServiceMonster::Configuration::DEFAULT_USERNAME)
+  describe '#api_key' do
+    it 'should return the default api key' do
+      expect(ServiceMonster.api_key).to eq(ServiceMonster::Configuration::DEFAULT_API_KEY)
     end
   end
 
-  describe '#username=' do
-    it 'should set the username' do
-      ServiceMonster.username = 'test'
-      expect(ServiceMonster.username).to eq('test')
-    end
-  end
-
-  describe '#password' do
-    it 'should return the default password' do
-      expect(ServiceMonster.password).to eq(ServiceMonster::Configuration::DEFAULT_PASSWORD)
-    end
-  end
-
-  describe '#password=' do
-    it 'should set the password' do
-      ServiceMonster.password = 'test'
-      expect(ServiceMonster.password).to eq('test')
+  describe '#api_key=' do
+    it 'should set the api key' do
+      ServiceMonster.api_key = 'test'
+      expect(ServiceMonster.api_key).to eq('test')
     end
   end
 

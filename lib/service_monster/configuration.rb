@@ -2,18 +2,14 @@ module ServiceMonster
   module Configuration
     
     VALID_OPTIONS_KEYS = [
-      :username,
-      :password,
+      :api_key,
       :api_version,
       :adapter,
       :endpoint
     ].freeze
 
-    # By default don't set the username.
-    DEFAULT_USERNAME = nil
-
-    # By default don't set the password.
-    DEFAULT_PASSWORD = nil
+    # By default don't set the api key.
+    DEFAULT_API_KEY = nil
 
     # By default use V1 of the API.
     DEFAULT_API_VERSION = '/v1'.freeze
@@ -47,8 +43,7 @@ module ServiceMonster
     
     # Reset all configuration settings to default values.
     def reset
-      self.username    = DEFAULT_USERNAME
-      self.password    = DEFAULT_PASSWORD
+      self.api_key     = DEFAULT_API_KEY
       self.api_version = DEFAULT_API_VERSION
       self.endpoint    = DEFAULT_ENDPOINT
       self.adapter     = DEFAULT_ADAPTER
