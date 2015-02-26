@@ -28,6 +28,10 @@ module ServiceMonster
       options[:limit]      = options[:limit] if options.has_key?(:limit)
       options[:pageindex]  = options[:page]  if options.has_key?(:page)
       options[:q]          = options[:q]  if options.has_key?(:q)
+      options[:wField]     = options[:wField] if options.has_key?(:wField)
+      options[:wOperator]  = options[:wOperator] if options.has_key?(:wOperator)
+      options[:wValue]     = options[:wValue] if options.has_key?(:wValue)
+
       return options
     end
     
