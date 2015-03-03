@@ -2,8 +2,13 @@ module ServiceMonster
   # Defines HTTP request methods
   module Request
     # Perform an HTTP GET request
-    def get(path, options={})
+    def get(path, options = {})
       request(:get, path, options)
+    end
+
+    # Perform an HTTP POST request
+    def get(path, options = {})
+      request(:post, path, options)
     end
 
     private
@@ -15,6 +20,9 @@ module ServiceMonster
         when :get
           formatted_options = format_options(options)
           request.url(path,formatted_options)
+        when :post, :put
+          request.url(path)
+          request.body = options unless options.empty?
         end
       end
       
