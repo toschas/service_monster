@@ -7,7 +7,7 @@ module ServiceMonster
     end
 
     # Perform an HTTP POST request
-    def get(path, options = {})
+    def post(path, options = {})
       request(:post, path, options)
     end
 
