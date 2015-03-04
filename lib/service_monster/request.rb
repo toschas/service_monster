@@ -21,8 +21,9 @@ module ServiceMonster
           formatted_options = format_options(options)
           request.url(path,formatted_options)
         when :post, :put
+          request.headers['Content-Type'] = 'application/json'
+          request.body = options.to_json unless options.empty?
           request.url(path)
-          request.body = options unless options.empty?
         end
       end
       
