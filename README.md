@@ -47,6 +47,15 @@ ServiceMonster supports several parameters that can be passed to their API to ch
 * **limit:** The number of records to return in the result. Defaults to 10.
 * **page:** The page of data to return in the result. Defaults to the first page of data.
 
+If you wish to filter a resource for a particular value in a field or set of dates use the following three parameters.
+
+* **wField:** A field name from the resource to filter on.
+* **wOperator:** An operator to use with the filter field. This can be one of:
+  * gt
+  * lt
+  * eq
+* **wValue:** The value used to filter the wField with.
+
 ## Contributing
 
 1. Fork it
@@ -54,5 +63,3 @@ ServiceMonster supports several parameters that can be passed to their API to ch
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
-
-x = ServiceMonster::Client.new(api_id: "w2f660Ob", api_key: "j1it28ow1X315ZV")
