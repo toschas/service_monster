@@ -27,12 +27,12 @@ There are two ways to configure the ServiceMonster gem. You can pass a hash of c
 a client, or you can use a configure block.
 
 ```ruby
-client = ServiceMonster.client({api_token: "YOUR_TOKEN_HERE"})
+client = ServiceMonster.client({api_key: "YOUR_KEY_HERE"})
 ```
 
 ```ruby
 ServiceMonster.configure do |config|
-  config.api_token = "YOUR_TOKEN_HERE"
+  config.api_key = "YOUR_KEY_HERE"
 end
 
 client = ServiceMonster.client
