@@ -18,3 +18,6 @@ tmp
 .DS_Store
 .ruby-version
 .ruby-gemset
+
+# rubymine files
+.idea/
